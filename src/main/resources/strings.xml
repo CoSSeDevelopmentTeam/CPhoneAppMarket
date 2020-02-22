@@ -1,0 +1,36 @@
+<strings>
+    <!-- Main Menu -->
+    <string name="m_title">AppMarket</string>
+    <string name="m_description">AppMarketへようこそ！</string>
+    <string name="m_button_search">§a検索</string>
+    <string name="m_button_newapps">新着アプリ</string>
+    <string name="m_button_bought">購入済み</string>
+    <string name="m_button_whatis">§cAppMarketとは？</string>
+
+    <!-- Search Applications -->
+    <string name="s_title">検索</string>
+    <string name="s_input_title">検索語句</string>
+    <string name="s_input_placeholder">AppMarket</string>
+
+    <!-- Search Result -->
+    <string name="sr_title">検索結果</string>
+    <string name="sr_unit">件</string>
+    <string name="sr_installed">§cインストール済み</string>
+    <string name="sr_not_installed">§e未インストール</string>
+
+    <!-- What is AppMarket -->
+    <string name="w_title">AppMarketとは？</string>
+    <string name="w_content">AppMarketはしふぉんにインストール可能なアプリを販売しているアプリストアです。サーバー内通貨でアプリは購入できます。随時アプリは追加されているのでお見逃しなく！</string>
+
+    <!-- App Details -->
+    <string name="ad_name">アプリ名: §a</string>
+    <string name="ad_price">価格: §a</string>
+    <string name="ad_author">デベロッパ: </string>
+    <string name="ad_version">バージョン: </string>
+
+    <!-- Utils -->
+    <string name="back_to_top">トップへ戻る</string>
+    <string name="back_to_home">ホームへ戻る</string>
+    <string name="install">§aインストール (購入)</string>
+    <string name="uninstall">§5アンインストール</string>
+</strings>

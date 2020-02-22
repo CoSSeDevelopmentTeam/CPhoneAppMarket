@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<!DOCTYPE manifest SYSTEM "https://raw.githubusercontent.com/CoSSeDevelopmentTeam/CPhone/master/CPhoneManifest.dtd">-->
+
+<manifest>
+    <application>
+        <title>AppMarket</title>
+        <description>アプリストア</description>
+        <author>itsu</author>
+        <version>1.0.0</version>
+        <mcbeversion>1.14.0</mcbeversion>
+        <icon>no</icon>
+    </application>
+
+    <permission type = "default" />
+
+    <activity>
+        <name>MainActivity</name>
+        <main>dev.itsu.cphoneappmarket.MainActivity</main>
+    </activity>
+</manifest>
