@@ -38,4 +38,7 @@
 
     <!-- My Apps -->
     <string name="ma_content">インストール済みのアプリケーション</string>
+
+    <!-- New Apps -->
+    <string name="na_content">最近更新されたアプリ（最大3つ）を表示しています。</string>
 </strings>

@@ -16,6 +16,7 @@ class MainActivity(manifest: ApplicationManifest) : ListActivity(manifest) {
     override fun onStop(response: Response): ReturnType {
         when((response as ListResponse).buttonIndex) {
             0 -> SearchActivity(manifest).start(bundle)
+            1 -> NewAppsActivity(manifest).start(bundle)
             2 -> MyAppsActivity(manifest).start(bundle)
             3 -> WhatIsActivity(manifest).start(bundle)
             else -> return ReturnType.TYPE_END

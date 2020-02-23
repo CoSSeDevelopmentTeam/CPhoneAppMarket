@@ -19,7 +19,7 @@ class SearchResultActivity(manifest: ApplicationManifest, private val keyword: S
 
     override fun onStop(response: Response): ReturnType {
         val listResponse = response as ListResponse
-        if (listResponse.buttonIndex == -1) return ReturnType.TYPE_END
+        if (listResponse.buttonIndex == ListResponse.NOT_SELECTED) return ReturnType.TYPE_END
         return ReturnType.TYPE_CONTINUE
     }
 
