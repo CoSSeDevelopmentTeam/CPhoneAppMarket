@@ -15,8 +15,10 @@ class MainActivity(manifest: ApplicationManifest) : ListActivity(manifest) {
 
     override fun onStop(response: Response): ReturnType {
         when((response as ListResponse).buttonIndex) {
-            0 -> SearchActivity(manifest).start(bundle.cPhone.player, bundle.strings)
-            3 -> WhatIsActivity(manifest).start(bundle.cPhone.player, bundle.strings)
+            0 -> SearchActivity(manifest).start(bundle)
+            2 -> MyAppsActivity(manifest).start(bundle)
+            3 -> WhatIsActivity(manifest).start(bundle)
+            else -> return ReturnType.TYPE_END
         }
         return ReturnType.TYPE_CONTINUE
     }
@@ -28,7 +30,7 @@ class MainActivity(manifest: ApplicationManifest) : ListActivity(manifest) {
 
         this.addButton(Button(bundle.getString("m_button_search")))
         this.addButton(Button(bundle.getString("m_button_newapps")))
-        this.addButton(Button(bundle.getString("m_button_bought")))
+        this.addButton(Button(bundle.getString("m_button_myapps")))
         this.addButton(Button(bundle.getString("m_button_whatis")))
     }
 

@@ -4,7 +4,7 @@
     <string name="m_description">AppMarketへようこそ！</string>
     <string name="m_button_search">§a検索</string>
     <string name="m_button_newapps">新着アプリ</string>
-    <string name="m_button_bought">購入済み</string>
+    <string name="m_button_myapps">購入済み</string>
     <string name="m_button_whatis">§cAppMarketとは？</string>
 
     <!-- Search Applications -->
@@ -33,4 +33,9 @@
     <string name="back_to_home">ホームへ戻る</string>
     <string name="install">§aインストール (購入)</string>
     <string name="uninstall">§5アンインストール</string>
+    <string name="installed_app">アプリをインストールしました。</string>
+    <string name="uninstalled_app">アプリをアンインストールしました。</string>
+
+    <!-- My Apps -->
+    <string name="ma_content">インストール済みのアプリケーション</string>
 </strings>

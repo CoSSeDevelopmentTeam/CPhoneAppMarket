@@ -14,7 +14,7 @@ class SearchActivity(manifest: ApplicationManifest) : CustomActivity(manifest) {
 
     override fun onStop(response: Response): ReturnType {
         val customResponse = response as CustomResponse
-        SearchResultActivity(manifest, customResponse.result[0] as String).start(bundle.cPhone.player, bundle.strings)
+        SearchResultActivity(manifest, customResponse.result[0] as String).start(bundle)
         return ReturnType.TYPE_CONTINUE
     }
 

@@ -1,10 +1,12 @@
 package dev.itsu.cphoneappmarket.search
 
 import cn.nukkit.Player
+import dev.itsu.cphoneappmarket.AppDetailsActivity
 import dev.itsu.cphoneappmarket.MainActivity
 import net.comorevi.cphone.cphone.application.ApplicationManifest
 import net.comorevi.cphone.cphone.data.ApplicationData
 import net.comorevi.cphone.cphone.model.Bundle
+import net.comorevi.cphone.cphone.model.ListResponse
 import net.comorevi.cphone.cphone.model.Response
 import net.comorevi.cphone.cphone.sql.ApplicationSQLManager
 import net.comorevi.cphone.cphone.widget.activity.ReturnType
@@ -16,6 +18,8 @@ class SearchResultActivity(manifest: ApplicationManifest, private val keyword: S
     private lateinit var bundle: Bundle
 
     override fun onStop(response: Response): ReturnType {
+        val listResponse = response as ListResponse
+        if (listResponse.buttonIndex == -1) return ReturnType.TYPE_END
         return ReturnType.TYPE_CONTINUE
     }
 
@@ -36,7 +40,7 @@ class SearchResultActivity(manifest: ApplicationManifest, private val keyword: S
         result.forEach {
             this.addButton(object : Button(it.key + "\n" + (if (userData.contains(it.key)) bundle.getString("sr_installed") else bundle.getString("sr_not_installed"))) {
                 override fun onClick(player: Player) {
-
+                    AppDetailsActivity(manifest, it.value).start(bundle)
                 }
             })
         }
@@ -46,7 +50,7 @@ class SearchResultActivity(manifest: ApplicationManifest, private val keyword: S
         this.title = "${bundle.getString("sr_title")} (0${bundle.getString("sr_unit")})"
         this.addButton(object : Button(bundle.getString("back_to_top")) {
             override fun onClick(player: Player) {
-                MainActivity(manifest).start(bundle.cPhone.player, bundle.strings)
+                MainActivity(manifest).start(bundle)
             }
         })
     }

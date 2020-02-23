@@ -14,7 +14,7 @@ class WhatIsActivity(manifest: ApplicationManifest) : ModalActivity(manifest) {
     override fun onStop(response: Response): ReturnType {
         val modalResponse = response as ModalResponse
         if (modalResponse.isButton1Clicked) {
-            MainActivity(manifest).start(bundle.cPhone.player, bundle.strings)
+            MainActivity(manifest).start(bundle)
             return ReturnType.TYPE_CONTINUE
         } else {
             return ReturnType.TYPE_END
