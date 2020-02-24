@@ -4,7 +4,7 @@
 <manifest>
     <application>
         <title>AppMarket</title>
-        <description>CPhoneに追加できるアプリを販売しているアプリ。様々なアプリをここから手に入れよう！アプリの購入はサーバー内通貨で。</description>
+        <description>CPhoneに追加できるアプリを販売しています。様々なアプリをここから手に入れよう！アプリの購入はサーバー内通貨で。</description>
         <author>itsu</author>
         <version>1.0.0</version>
         <mcbeversion>1.14.0</mcbeversion>

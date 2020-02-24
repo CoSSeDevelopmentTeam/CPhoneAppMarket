@@ -58,13 +58,16 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
         }
 
         button1Text = when {
-            app.permission == ApplicationPermission.ATTRIBUTE_DEFAULT -> bundle.getString("back_to_top")
+            app.permission == ApplicationPermission.ATTRIBUTE_DEFAULT -> {
+                content += "\n" + bundle.getString("cb_isdefault")
+                bundle.getString("back_to_top")
+            }
             hasApp -> bundle.getString("uninstall")
             !isEnough -> "§c" + bundle.getString("install")
             else -> bundle.getString("install")
         }
 
-        button1Text = bundle.getString("back_to_top")
+        button2Text = bundle.getString("back_to_top")
     }
 
 }
