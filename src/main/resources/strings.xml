@@ -31,6 +31,7 @@
     <string name="cb_install">アプリをインストールしますか？</string>
     <string name="cb_uninstall">アプリをアンインストールしますか？</string>
     <string name="cb_title">確認</string>
+    <string name="cb_isdefault">§7デフォルトアプリケーションはアンインストールできません。</string>
     <string name="cb_error_money">§c所持金残高が足りないため、アプリを購入できませんでした。</string>
 
     <!-- Utils -->

@@ -8,7 +8,8 @@
         <author>itsu</author>
         <version>1.0.0</version>
         <mcbeversion>1.14.0</mcbeversion>
-        <icon>no</icon>
+        <icon>textures/items/apple</icon>
+        <iconType>path</iconType>
     </application>
 
     <permission type = "default" />
