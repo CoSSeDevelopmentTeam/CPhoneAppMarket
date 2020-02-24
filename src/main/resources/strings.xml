@@ -15,7 +15,7 @@
     <!-- Search Result -->
     <string name="sr_title">検索結果</string>
     <string name="sr_unit">件</string>
-    <string name="sr_installed">§cインストール済み</string>
+    <string name="sr_installed">§9インストール済み</string>
     <string name="sr_not_installed">§e未インストール</string>
 
     <!-- What is AppMarket -->
@@ -23,18 +23,24 @@
     <string name="w_content">AppMarketはしふぉんにインストール可能なアプリを販売しているアプリストアです。サーバー内通貨でアプリは購入できます。随時アプリは追加されているのでお見逃しなく！</string>
 
     <!-- App Details -->
-    <string name="ad_name">アプリ名: §a</string>
     <string name="ad_price">価格: §a</string>
     <string name="ad_author">デベロッパ: </string>
     <string name="ad_version">バージョン: </string>
+
+    <!-- Confirm buying applications -->
+    <string name="cb_install">アプリをインストールしますか？</string>
+    <string name="cb_uninstall">アプリをアンインストールしますか？</string>
+    <string name="cb_title">確認</string>
+    <string name="cb_error_money">§c所持金残高が足りないため、アプリを購入できませんでした。</string>
 
     <!-- Utils -->
     <string name="back_to_top">トップへ戻る</string>
     <string name="back_to_home">ホームへ戻る</string>
     <string name="install">§aインストール (購入)</string>
-    <string name="uninstall">§5アンインストール</string>
+    <string name="uninstall">§cアンインストール</string>
     <string name="installed_app">アプリをインストールしました。</string>
     <string name="uninstalled_app">アプリをアンインストールしました。</string>
+    <string name="my_money">所持金:§a</string>
 
     <!-- My Apps -->
     <string name="ma_content">インストール済みのアプリケーション</string>

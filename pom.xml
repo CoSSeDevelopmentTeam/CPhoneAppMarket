@@ -81,10 +81,17 @@
         </dependency>
 
         <dependency>
+            <groupId>net.comorevi</groupId>
+            <artifactId>MoneySAPI</artifactId>
+            <version>2.4.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>cn.nukkit</groupId>
             <artifactId>nukkit</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
