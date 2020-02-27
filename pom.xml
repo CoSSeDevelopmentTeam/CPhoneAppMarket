@@ -25,6 +25,7 @@
     </repositories>
 
     <build>
+        <finalName>AppMarket</finalName>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
