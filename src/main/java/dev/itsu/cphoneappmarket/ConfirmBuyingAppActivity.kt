@@ -34,8 +34,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
             bundle.cPhone.homeMessage = bundle.getString("cb_error_money")
             return ReturnType.TYPE_END
         }
-
-        println(app.title)
+        
         ApplicationSQLManager.installApplication(bundle.cPhone.player.name, app)
         MoneySAPI.getInstance().reduceMoney(bundle.cPhone.player.name, app.price)
         bundle.cPhone.homeMessage = bundle.getString("installed_app") + " (${app.title})"
