@@ -52,7 +52,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
                 ${bundle.getString("cb_install")}
                 
                 ${bundle.getString("ad_price")} ${app.price}${MoneySAPI.getInstance().moneyUnit} ${TextFormat.RESET}
-                ${bundle.getString("my_money")} ${if (isEnough) "§a" else "§c"} $money${MoneySAPI.getInstance().moneyUnit} ${MoneySAPI.getInstance().moneyUnit} ${TextFormat.RESET}
+                ${bundle.getString("my_money")} ${if (isEnough) "§a" else "§c"} $money${MoneySAPI.getInstance().moneyUnit} ${TextFormat.RESET}
             """.trimIndent()
 
         }
