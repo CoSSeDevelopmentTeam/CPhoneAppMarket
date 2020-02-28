@@ -27,7 +27,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
             return ReturnType.TYPE_END
         }
 
-        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player)
+        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player.name)
         val isEnough = money >= app.price
 
         if (!isEnough) {
@@ -46,7 +46,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
     override fun onCreate(bundle: Bundle) {
         this.bundle = bundle
 
-        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player)
+        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player.name)
         val isEnough = money >= app.price
 
         title = bundle.getString("cb_title")
