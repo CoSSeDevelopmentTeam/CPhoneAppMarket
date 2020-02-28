@@ -17,7 +17,9 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
 
     override fun onStop(response: Response): ReturnType {
         val modalResponse = response as ModalResponse
-        if (modalResponse.isButton2Clicked || !modalResponse.isButton1Clicked) return ReturnType.TYPE_END
+        if (!modalResponse.isButton1Clicked) {
+            return ReturnType.TYPE_END
+        }
 
         if (hasApp) {
             ApplicationSQLManager.unInstallApplication(bundle.cPhone.player.name, app)
@@ -33,6 +35,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
             return ReturnType.TYPE_END
         }
 
+        println(app.title)
         ApplicationSQLManager.installApplication(bundle.cPhone.player.name, app)
         MoneySAPI.getInstance().reduceMoney(bundle.cPhone.player.name, app.price)
         bundle.cPhone.homeMessage = bundle.getString("installed_app") + " (${app.title})"
