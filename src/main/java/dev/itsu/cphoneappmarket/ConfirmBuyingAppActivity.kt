@@ -39,8 +39,6 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
         MoneySAPI.getInstance().reduceMoney(bundle.cPhone.player.name, app.price)
         bundle.cPhone.homeMessage = bundle.getString("installed_app") + " (${app.title})"
 
-        println("INSTALLED")
-
         return ReturnType.TYPE_END
     }
 
