@@ -27,7 +27,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
             return ReturnType.TYPE_END
         }
 
-        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player.name)
+        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player)
         val isEnough = money >= app.price
 
         if (!isEnough) {
@@ -39,13 +39,15 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
         MoneySAPI.getInstance().reduceMoney(bundle.cPhone.player.name, app.price)
         bundle.cPhone.homeMessage = bundle.getString("installed_app") + " (${app.title})"
 
+        println("INSTALLED")
+
         return ReturnType.TYPE_END
     }
 
     override fun onCreate(bundle: Bundle) {
         this.bundle = bundle
 
-        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player.name)
+        val money = MoneySAPI.getInstance().getMoney(bundle.cPhone.player)
         val isEnough = money >= app.price
 
         title = bundle.getString("cb_title")
