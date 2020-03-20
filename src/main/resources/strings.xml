@@ -17,6 +17,7 @@
     <string name="sr_unit">件</string>
     <string name="sr_installed">§9インストール済み</string>
     <string name="sr_not_installed">§e未インストール</string>
+    <string name="sr_permission_denied">§cインストール権限がありません</string>
 
     <!-- What is AppMarket -->
     <string name="w_title">AppMarketとは？</string>
@@ -33,6 +34,7 @@
     <string name="cb_title">確認</string>
     <string name="cb_isdefault">§7デフォルトアプリケーションはアンインストールできません。</string>
     <string name="cb_error_money">§c所持金残高が足りないため、アプリを購入できませんでした。</string>
+    <string name="cb_error_permission">§cこのアプリケーションをインストールする権限がありません。</string>
 
     <!-- Utils -->
     <string name="back_to_top">トップへ戻る</string>

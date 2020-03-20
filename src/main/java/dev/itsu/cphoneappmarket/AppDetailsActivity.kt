@@ -2,6 +2,7 @@ package dev.itsu.cphoneappmarket
 
 import cn.nukkit.utils.TextFormat
 import net.comorevi.cphone.cphone.application.ApplicationManifest
+import net.comorevi.cphone.cphone.application.ApplicationPermission
 import net.comorevi.cphone.cphone.model.Bundle
 import net.comorevi.cphone.cphone.model.ModalResponse
 import net.comorevi.cphone.cphone.model.Response
@@ -14,12 +15,13 @@ class AppDetailsActivity(manifest: ApplicationManifest, val app: ApplicationMani
 
     private lateinit var bundle: Bundle
     private var hasApp: Boolean = false
+    private var acceptable: Boolean = false
 
     override fun onStop(response: Response): ReturnType {
         val modalResponse = response as ModalResponse
         return when {
             modalResponse.isButton1Clicked -> {
-                ConfirmBuyingAppActivity(manifest, app, hasApp).start(bundle)
+                ConfirmBuyingAppActivity(manifest, app, hasApp, acceptable).start(bundle)
                 ReturnType.TYPE_CONTINUE
             }
             modalResponse.isButton2Clicked -> ReturnType.TYPE_END
@@ -31,10 +33,18 @@ class AppDetailsActivity(manifest: ApplicationManifest, val app: ApplicationMani
         this.bundle = bundle
         hasApp = ApplicationSQLManager.getApplications(bundle.cPhone.player.name).contains(app.title)
 
+        acceptable = ApplicationSQLManager.getPermission(bundle.cPhone.player.name).canAccept(app.permission)
+        val permissionText = when {
+            hasApp -> bundle.getString("sr_installed")
+            !hasApp && !acceptable -> bundle.getString("sr_permission_denied")
+            !hasApp && acceptable -> bundle.getString("sr_not_installed")
+            else -> bundle.getString("sr_not_installed")
+        }
+
         this.title = app.title
         this.content = """
             §a${app.title} ${TextFormat.RESET}
-            ${if (hasApp) bundle.getString("sr_installed") else bundle.getString("sr_not_installed")} ${TextFormat.RESET}
+            $permissionText ${TextFormat.RESET}
             
             ${app.description} ${TextFormat.RESET}
             

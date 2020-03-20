@@ -3,15 +3,17 @@ package dev.itsu.cphoneappmarket
 import cn.nukkit.utils.TextFormat
 import net.comorevi.cphone.cphone.application.ApplicationManifest
 import net.comorevi.cphone.cphone.application.ApplicationPermission
+import net.comorevi.cphone.cphone.exception.PermissionException
 import net.comorevi.cphone.cphone.model.Bundle
 import net.comorevi.cphone.cphone.model.ModalResponse
 import net.comorevi.cphone.cphone.model.Response
 import net.comorevi.cphone.cphone.sql.ApplicationSQLManager
 import net.comorevi.cphone.cphone.widget.activity.ReturnType
 import net.comorevi.cphone.cphone.widget.activity.base.ModalActivity
+import net.comorevi.cphone.cphone.widget.activity.original.MessageActivity
 import net.comorevi.moneyapi.MoneySAPI
 
-class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: ApplicationManifest, private val hasApp: Boolean) : ModalActivity(manifest) {
+class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: ApplicationManifest, private val hasApp: Boolean, private val acceptable: Boolean) : ModalActivity(manifest) {
 
     private lateinit var bundle: Bundle
 
@@ -19,6 +21,11 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
         val modalResponse = response as ModalResponse
         if (!modalResponse.isButton1Clicked) {
             return ReturnType.TYPE_END
+        }
+
+        if (!acceptable) {
+            MessageActivity(manifest, bundle.getString("cb_error_permission"), bundle.getString("back_to_top"), bundle.getString("back_to_home"), MainActivity(manifest)).start(bundle)
+            return ReturnType.TYPE_CONTINUE
         }
 
         if (hasApp) {
@@ -34,8 +41,20 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
             bundle.cPhone.homeMessage = bundle.getString("cb_error_money")
             return ReturnType.TYPE_END
         }
-        
-        ApplicationSQLManager.installApplication(bundle.cPhone.player.name, app)
+
+        try {
+            ApplicationSQLManager.installApplication(bundle.cPhone.player.name, app)
+        } catch (e: PermissionException) {
+            MessageActivity(
+                    manifest,
+                    bundle.getString("cb_error_permission"),
+                    bundle.getString("back_to_top"),
+                    bundle.getString("back_to_home"),
+                    MainActivity(manifest)
+            ).start(bundle)
+            return ReturnType.TYPE_CONTINUE
+        }
+
         MoneySAPI.getInstance().reduceMoney(bundle.cPhone.player.name, app.price)
         bundle.cPhone.homeMessage = bundle.getString("installed_app") + " (${app.title})"
 
