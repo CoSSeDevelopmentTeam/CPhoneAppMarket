@@ -1,0 +1,53 @@
+<strings>
+    <!-- Main Menu -->
+    <string name="m_title">AppMarket</string>
+    <string name="m_description">Welcome to AppMarket!</string>
+    <string name="m_button_search">§aSearch</string>
+    <string name="m_button_newapps">New Apps</string>
+    <string name="m_button_myapps">Installed</string>
+    <string name="m_button_whatis">§cWhat is AppMarket?</string>
+
+    <!-- Search Applications -->
+    <string name="s_title">Search</string>
+    <string name="s_input_title">keywords</string>
+    <string name="s_input_placeholder">AppMarket</string>
+
+    <!-- Search Result -->
+    <string name="sr_title">Results</string>
+    <string name="sr_unit">items</string>
+    <string name="sr_installed">§9Installed</string>
+    <string name="sr_not_installed">§eNot installed</string>
+    <string name="sr_permission_denied">§cPermission denied to install</string>
+
+    <!-- What is AppMarket -->
+    <string name="w_title">What is AppMarket?</string>
+    <string name="w_content">AppMarket is an application which sells applications for CPhone.You can buy them with your server currency.</string>
+
+    <!-- App Details -->
+    <string name="ad_price">Price: §a</string>
+    <string name="ad_author">Developer: </string>
+    <string name="ad_version">Version: </string>
+
+    <!-- Confirm buying applications -->
+    <string name="cb_install">Will you install the application?</string>
+    <string name="cb_uninstall">Will you uninstall the application?</string>
+    <string name="cb_title">Confirm</string>
+    <string name="cb_isdefault">§7You cannot uninstall default application.</string>
+    <string name="cb_error_money">§cYou cannot install the application because you do not have enough money.</string>
+    <string name="cb_error_permission">§cYou do not have permission to install this application.</string>
+
+    <!-- Utils -->
+    <string name="back_to_top">§3Back to menu</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="install">§aInstall (Buy)</string>
+    <string name="uninstall">§cUninstall</string>
+    <string name="installed_app">Installed Application</string>
+    <string name="uninstalled_app">Uninstalled application</string>
+    <string name="my_money">Your money:§a</string>
+
+    <!-- My Apps -->
+    <string name="ma_content">Installed applications</string>
+
+    <!-- New Apps -->
+    <string name="na_content">These are the newest applications. (Up to three contents)</string>
+</strings>
