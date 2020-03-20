@@ -6,7 +6,7 @@
 
     <groupId>dev.itsu</groupId>
     <artifactId>CPhoneAppMarket</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <properties>
         <kotlin.version>1.3.61</kotlin.version>
@@ -66,7 +66,7 @@
         <dependency>
             <groupId>net.comorevi</groupId>
             <artifactId>MoneySAPI</artifactId>
-            <version>2.4.1-SNAPSHOT</version>
+            <version>4.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
