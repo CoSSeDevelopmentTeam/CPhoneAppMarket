@@ -4,7 +4,7 @@
     <string name="m_description">AppMarketへようこそ！</string>
     <string name="m_button_search">§a検索</string>
     <string name="m_button_newapps">新着アプリ</string>
-    <string name="m_button_myapps">購入済み</string>
+    <string name="m_button_myapps">インストール済み</string>
     <string name="m_button_whatis">§cAppMarketとは？</string>
 
     <!-- Search Applications -->

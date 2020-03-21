@@ -29,6 +29,11 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
         }
 
         if (hasApp) {
+            if (app.permission == ApplicationPermission.ATTRIBUTE_DEFAULT) {
+                MainActivity(manifest).start(bundle)
+                return ReturnType.TYPE_CONTINUE
+            }
+
             ApplicationSQLManager.unInstallApplication(bundle.cPhone.player.name, app)
             bundle.cPhone.homeMessage = bundle.getString("uninstalled_app") + " (${app.title})"
             return ReturnType.TYPE_END
@@ -79,7 +84,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
         }
 
         button1Text = when {
-            app.permission == ApplicationPermission.ATTRIBUTE_DEFAULT -> {
+            hasApp && app.permission == ApplicationPermission.ATTRIBUTE_DEFAULT -> {
                 content += "\n" + bundle.getString("cb_isdefault")
                 bundle.getString("back_to_top")
             }
@@ -88,7 +93,7 @@ class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: A
             else -> bundle.getString("install")
         }
 
-        button2Text = bundle.getString("back_to_top")
+        button2Text = bundle.getString("back_to_home")
     }
 
 }
