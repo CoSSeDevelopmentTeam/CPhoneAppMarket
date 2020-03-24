@@ -43,10 +43,10 @@ class AppDetailsActivity(manifest: ApplicationManifest, val app: ApplicationMani
 
         this.title = app.title
         this.content = """
-            §a${app.title} ${TextFormat.RESET}
+            §a${app.getTitleByRegion(bundle.cPhone.region)} ${TextFormat.RESET}
             $permissionText ${TextFormat.RESET}
             
-            ${app.description} ${TextFormat.RESET}
+            ${app.getDescriptionByRegion(bundle.cPhone.region)} ${TextFormat.RESET}
             
             ${bundle.getString("ad_price")} ${app.price}${MoneySAPI.getInstance().moneyUnit} ${TextFormat.RESET}
             ${bundle.getString("ad_version")} ${app.version}
