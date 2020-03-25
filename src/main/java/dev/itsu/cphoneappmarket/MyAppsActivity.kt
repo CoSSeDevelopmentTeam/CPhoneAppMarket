@@ -26,7 +26,7 @@ class MyAppsActivity(manifest: ApplicationManifest) : ListActivity(manifest) {
         title = bundle.getString("m_button_myapps")
         content = bundle.getString("ma_content")
         ApplicationSQLManager.getApplications(bundle.cPhone.player.name).forEach {
-            addButton(object : Button(it) {
+            addButton(object : Button(ApplicationData.applications[it]!!.getTitleByRegion(bundle.cPhone.region)) {
                 override fun onClick(player: Player) {
                     AppDetailsActivity(manifest, ApplicationData.applications[it]!!).start(bundle)
                 }

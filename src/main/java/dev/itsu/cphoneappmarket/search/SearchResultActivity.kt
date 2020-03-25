@@ -38,7 +38,7 @@ class SearchResultActivity(manifest: ApplicationManifest, private val keyword: S
         this.title = "${bundle.getString("sr_title")} (${result.size}${bundle.getString("sr_unit")})"
         val userData = ApplicationSQLManager.getApplications(bundle.cPhone.player.name)
         result.forEach {
-            this.addButton(object : Button(it.key + "\n" + (if (userData.contains(it.key)) bundle.getString("sr_installed") else bundle.getString("sr_not_installed"))) {
+            this.addButton(object : Button(it.value.getTitleByRegion(bundle.cPhone.region) + "\n" + (if (userData.contains(it.key)) bundle.getString("sr_installed") else bundle.getString("sr_not_installed"))) {
                 override fun onClick(player: Player) {
                     AppDetailsActivity(manifest, it.value).start(bundle)
                 }

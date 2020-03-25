@@ -37,9 +37,11 @@ class NewAppsActivity(manifest: ApplicationManifest) : ListActivity(manifest) {
                 .forEach {
                     if (index > 2) return@forEach
 
-                    addButton(object : Button(it.nameWithoutExtension) {
+                    val app = ApplicationData.applications[it.nameWithoutExtension] ?: return@forEach
+
+                    addButton(object : Button(app.getTitleByRegion(bundle.cPhone.region)) {
                         override fun onClick(player: Player) {
-                            AppDetailsActivity(manifest, ApplicationData.applications[it.nameWithoutExtension] ?: return).start(bundle)
+                            AppDetailsActivity(manifest, app).start(bundle)
                         }
                     })
                     index++
