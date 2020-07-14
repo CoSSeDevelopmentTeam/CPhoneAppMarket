@@ -11,7 +11,7 @@ import net.comorevi.cphone.cphone.sql.ApplicationSQLManager
 import net.comorevi.cphone.cphone.widget.activity.ReturnType
 import net.comorevi.cphone.cphone.widget.activity.base.ModalActivity
 import net.comorevi.cphone.cphone.widget.activity.original.MessageActivity
-import net.comorevi.moneyapi.MoneySAPI
+import net.comorevi.np.moneys.MoneySAPI
 
 class ConfirmBuyingAppActivity(manifest: ApplicationManifest, private val app: ApplicationManifest, private val hasApp: Boolean, private val acceptable: Boolean) : ModalActivity(manifest) {
 

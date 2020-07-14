@@ -2,14 +2,13 @@ package dev.itsu.cphoneappmarket
 
 import cn.nukkit.utils.TextFormat
 import net.comorevi.cphone.cphone.application.ApplicationManifest
-import net.comorevi.cphone.cphone.application.ApplicationPermission
 import net.comorevi.cphone.cphone.model.Bundle
 import net.comorevi.cphone.cphone.model.ModalResponse
 import net.comorevi.cphone.cphone.model.Response
 import net.comorevi.cphone.cphone.sql.ApplicationSQLManager
 import net.comorevi.cphone.cphone.widget.activity.ReturnType
 import net.comorevi.cphone.cphone.widget.activity.base.ModalActivity
-import net.comorevi.moneyapi.MoneySAPI
+import net.comorevi.np.moneys.MoneySAPI
 
 class AppDetailsActivity(manifest: ApplicationManifest, val app: ApplicationManifest) : ModalActivity(manifest) {
 
